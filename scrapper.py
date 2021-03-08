@@ -7,3 +7,8 @@ source = requests.get('https://stuff.co.nz').text
 soup = BeautifulSoup(source, "xml")
 tags = soup.find('app-vertical-article-list')
 print(tags)
+
+# headers = tags.find_all('h3')
+# print(headers)
+# print('test')
+
