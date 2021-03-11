@@ -62,7 +62,7 @@ for x in range(article_count):
 
     sql = "INSERT INTO news_site ( ARTICLE_DATE, CATEGORY, WEBSITE, NAME, URL, BRIEF, PICTURE ) VALUES ( %s, %s, %s, " \
           "%s, %s, %s, %s ) "
-    val = [(today, category, website, name, url, brief, 'NULL')]
+    val = [(today, category, website, name, url, brief, 'null')]
 
     cursor = connection.cursor()
     cursor.executemany(sql, val)
