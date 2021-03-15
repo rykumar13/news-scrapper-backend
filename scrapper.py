@@ -2,10 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import db_helper as db
 
-connection = db.create_connection()
 
-
-def stuff_scrapper():
+def stuff_scrapper(connection):
     category = 'Breaking'
     website = 'stuff'
     base_url = 'https://stuff.co.nz'
@@ -28,7 +26,7 @@ def stuff_scrapper():
         db.insert_record(connection, category, website, name, url, brief, 'NULL')
 
 
-def rnz_scrapper():
+def rnz_scrapper(connection):
     category = 'Breaking'
     website = 'rnz'
     base_url = 'https://www.rnz.co.nz/'
@@ -46,7 +44,7 @@ def rnz_scrapper():
         db.insert_record(connection, category, website, name, url, brief, 'NULL')
 
 
-def scoop_scrapper():
+def scoop_scrapper(connection):
     category = 'Breaking'
     website = 'scoop'
     base_url = 'https://www.scoop.co.nz/'
@@ -66,9 +64,11 @@ def scoop_scrapper():
 
 
 def main():
-    stuff_scrapper()
-    rnz_scrapper()
-    scoop_scrapper()
+    connection = db.create_connection()
+    db.clear_db(connection)
+    stuff_scrapper(connection)
+    rnz_scrapper(connection)
+    scoop_scrapper(connection)
 
 
 if __name__ == "__main__":

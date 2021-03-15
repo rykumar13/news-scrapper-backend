@@ -34,6 +34,16 @@ def insert_record(connection, category, website, name, url, brief, picture):
         print(f"The error '{e}' occurred")
 
 
+def clear_db(connection):
+    try:
+        sql = "DELETE FROM NEWS_SITE WHERE ID > 0;"
+        cursor = connection.cursor()
+        cursor.executemany(sql, [()])
+        connection.commit()
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
