@@ -1,3 +1,4 @@
+from datetime import date
 import mysql.connector
 from mysql.connector import Error
 import database_creds
@@ -17,6 +18,20 @@ def create_connection():
         print(f"The error '{e}' occurred")
 
     return connection
+
+
+def insert_record(connection, category, website, name, url, brief, picture):
+    today = date.today()
+    try:
+        sql = "INSERT INTO news_site ( ARTICLE_DATE, CATEGORY, WEBSITE, NAME, URL, BRIEF, PICTURE ) VALUES ( %s, %s, " \
+              "%s, " \
+              "%s, %s, %s, %s ) "
+        val = [(today, category, website, name, url, brief, picture)]
+        cursor = connection.cursor()
+        cursor.executemany(sql, val)
+        connection.commit()
+    except Error as e:
+        print(f"The error '{e}' occurred")
 
 
 def execute_query(connection, query):
