@@ -44,6 +44,26 @@ def clear_db(connection):
         print(f"The error '{e}' occurred")
 
 
+def get_data(connection):
+    try:
+        sql = "SELECT JSON_ARRAYAGG(JSON_OBJECT('Id', ID," \
+              "'Date', ARTICLE_DATE," \
+              "'Category', CATEGORY," \
+              "'Website', WEBSITE," \
+              "'Name', NAME," \
+              "'Url', URL," \
+              "'Brief', BRIEF," \
+              "'Picture', PICTURE" \
+              ")) " \
+              "FROM NEWS_SITE;"
+        cursor = connection.cursor()
+        cursor.execute(sql)
+        result_json = cursor.fetchall()
+        return result_json
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
 def execute_query(connection, query):
     cursor = connection.cursor()
     try:
