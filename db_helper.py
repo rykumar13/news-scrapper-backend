@@ -23,7 +23,7 @@ def create_connection():
 def insert_record(connection, category, website, name, url, brief, picture):
     today = date.today()
     try:
-        sql = "INSERT INTO news_site ( ARTICLE_DATE, CATEGORY, WEBSITE, NAME, URL, BRIEF, PICTURE ) VALUES ( %s, %s, " \
+        sql = "INSERT INTO NEWS_SITE ( ARTICLE_DATE, CATEGORY, WEBSITE, NAME, URL, BRIEF, PICTURE ) VALUES ( %s, %s, " \
               "%s, " \
               "%s, %s, %s, %s ) "
         val = [(today, category, website, name, url, brief, picture)]

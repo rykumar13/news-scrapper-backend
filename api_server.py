@@ -10,7 +10,6 @@ class Quotes(Resource):
     def get(self):
         connection = db.create_connection()
         results = db.get_data(connection)[0][0]
-        print(results)
         return results
 
 
