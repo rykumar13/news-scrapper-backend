@@ -3,8 +3,8 @@ from flask_restful import Resource, Api
 import db_helper as db
 import database_creds as creds
 
-app = Flask(__name__)
-api = Api(app)
+application = Flask(__name__)
+api = Api(application)
 
 
 class Quotes(Resource):
@@ -19,4 +19,4 @@ class Quotes(Resource):
 api.add_resource(Quotes, '/')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='8080')
+    application.run(debug=True, host='0.0.0.0', port='8080')
