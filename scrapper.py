@@ -66,7 +66,7 @@ def scoop_scrapper(connection):
 def main():
     connection = db.create_connection()
     db.clear_db(connection)
-    stuff_scrapper(connection)
+    # stuff_scrapper(connection)
     rnz_scrapper(connection)
     scoop_scrapper(connection)
 
