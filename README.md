@@ -1,11 +1,10 @@
-python script to scrape stuff, rnz &amp; scoop for latest news
-
-<h1 align="center">
+<h1>
   news-scrapper-script
 </h1>
-<p align="center">
+<p>
 Cron Job on AWS EC2 to populate AWS MySQL RDS instance to support <a href="https://daily-roundup.netlify.app/">daily-roundup.netlify.app</a> website
 </p>
+<br>
 <h2>Purpose</h2>
 <p>
 Purpose of this api is to scrape the latest headlines from stuff, RadioNZ & Scoop and store it in a AWS RDS instance so that it can be served for <a href="https://github.com/rykumar13/react-news-website">
