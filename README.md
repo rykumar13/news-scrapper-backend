@@ -1,8 +1,8 @@
 <h1>
-  news-scrapper-script
+  news-scrapper-backend
 </h1>
 <p>
-Cron Job on AWS EC2 to populate AWS MySQL RDS instance to support <a href="https://daily-roundup.netlify.app/">daily-roundup.netlify.app</a> website
+Script Cron Job on AWS EC2 to populate AWS MySQL RDS instance to support <a href="https://daily-roundup.netlify.app/">daily-roundup.netlify.app</a> website
 </p>
 <br>
 <h2>Purpose</h2>
